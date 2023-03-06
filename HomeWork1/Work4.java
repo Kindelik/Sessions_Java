@@ -9,7 +9,7 @@ public class Work4 {
 //        String[] input = {"2?4", "+", "?5", "=", "259"};
 
         Scanner in = new Scanner(System.in);
-        System.out.print("Введите уравнение, пример(2?4 + ?5 = 259)\n => ");
+        System.out.print("Введите уравнение, пример(2?4 + 5??5 = 5259)\n => ");
         String[] input = in.nextLine().split(" "); // ["2?","+","?5","=","69"]
         in.close();
 
