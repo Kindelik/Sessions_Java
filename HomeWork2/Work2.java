@@ -17,7 +17,7 @@ public class Work2 {
         List<Integer> listInt = new ArrayList<>();
         SimpleFormatter sFormat = new SimpleFormatter();
         fileHW2.setFormatter(sFormat);
-
+        logHW2.setUseParentHandlers(false); // вывод логов в терминал, true and false
         for (int i = 0; i <= 10; i++) {
             listInt.add(new Random().nextInt(0, 100));
         }
