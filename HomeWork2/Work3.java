@@ -33,7 +33,7 @@ public class Work3 {
         BufferedReader file = new BufferedReader(fr);
         while ((str = file.readLine()) != null) strArr.add(str);
         System.out.println(strArr);
-    Object mapper = new Ma
+
     }
 
 }
