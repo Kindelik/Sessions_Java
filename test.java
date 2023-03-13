@@ -1,14 +1,18 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class test {
     public static void main(String[] args) {
+        Map<String, String> states = new HashMap<>();
+        String somiStr = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
+        StringBuilder outStr = new StringBuilder();
+        String newInputStr = somiStr.replaceAll("[\"{}]", "");
+        System.out.println(newInputStr);
+        String[] newInputStrArr = newInputStr.split(",");
+        for (String item: newInputStrArr
+             ) {
 
-        List<Integer> list = new ArrayList<>();
-        Integer[] arr = {1,2,3,4,5,6,7,8};
-        Collections.addAll(list, arr);
-        System.out.println(list);
+        }
     }
 }
 
