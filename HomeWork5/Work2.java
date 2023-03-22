@@ -3,9 +3,7 @@ package HomeWork5;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 Пусть дан список сотрудников:
@@ -33,24 +31,34 @@ import java.util.Map;
 */
 public class Work2 {
     public static void main(String[] args) throws FileNotFoundException {
-        Map<String,String> staff = new HashMap<>();
+        Map<String, String> staff = new HashMap<>();
         String tempWriter;
 
         try {
             BufferedReader br = new BufferedReader(new FileReader("HomeWork5/Staff.txt"));
-            while ((tempWriter = br.readLine())!= null){
+            while ((tempWriter = br.readLine()) != null) {
                 String[] tempWrArr = tempWriter.split(" ");
-                staff.putIfAbsent(tempWrArr[1],tempWrArr[0]);
+                staff.putIfAbsent(tempWrArr[1], tempWrArr[0]);
             }
 
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println("Файл не найден");
             System.exit(0);
         }
-        System.out.println(staff);
-        String[] nameStr = staff.values().toArray(new String[0]);
-        System.out.println(Arrays.toString(nameStr));
+        List<String> nameStr = new ArrayList<>();
+        for (String i : staff.values()) {
+            nameStr.add(i);
 
+
+        }
+        Map<String, Integer> mp = new HashMap<>();
+        Set<String> unique = new HashSet<>(nameStr);
+        for (String key : unique) {
+            mp.put(key, Collections.frequency(nameStr, key));
+        }
+        mp.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
     }
 }
+
