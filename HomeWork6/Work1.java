@@ -110,8 +110,8 @@ public class Work1 {
     }
 
     public static void sortCPU(List<Notebook> list, Map<String, String> map) {
-        if (map.get("os") != null) {
-            String temp = map.get("weight").toLowerCase(Locale.ROOT);
+        if (map.get("cpu") != null) {
+            String temp = map.get("cpu").toLowerCase(Locale.ROOT);
             list.removeIf(item -> !temp.equals(item.getName()));
         }
     }
